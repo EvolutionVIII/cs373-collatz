@@ -1,11 +1,4 @@
-.......
-----------------------------------------------------------------------
-Ran 7 tests in 0.001s
-
-OK
-Name          Stmts   Miss Branch BrMiss  Cover   Missing
----------------------------------------------------------
-Collatz          12      0      2      0   100%   
-TestCollatz      33      1      2      1    94%   81
----------------------------------------------------------
-TOTAL            45      1      4      1    96%   
+Traceback (most recent call last):
+  File "TestCollatz.py", line 18, in <module>
+    from Collatz import collatz_read, collatz_singleval, collatz_eval, collatz_print, collatz_solve
+ImportError: cannot import name 'collatz_singleval'

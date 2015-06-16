@@ -20,6 +20,19 @@ def collatz_read (s) :
     return [int(a[0]), int(a[1])]
 
 # ------------
+# collatz_singleval
+# ------------
+
+def collatz_singleeval (i) :
+    """
+    i the beginning of the range, inclusive
+    j the end       of the range, inclusive
+    return the max cycle length of the range [i, j]
+    """
+    # <your code>
+    return 1
+
+# ------------
 # collatz_eval
 # ------------
 
