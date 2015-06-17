@@ -23,14 +23,14 @@ def collatz_read (s) :
 # collatz_singleval
 # ------------
 
-def collatz_singleeval (i) :
-    """
-    i the beginning of the range, inclusive
-    j the end       of the range, inclusive
-    return the max cycle length of the range [i, j]
-    """
-    # <your code>
-    return 1
+# def collatz_singleeval (i) :
+#     """
+#     i the beginning of the range, inclusive
+#     j the end       of the range, inclusive
+#     return the max cycle length of the range [i, j]
+#     """
+#     # <your code>
+#     return 1
 
 # ------------
 # collatz_eval
@@ -43,7 +43,35 @@ def collatz_eval (i, j) :
     return the max cycle length of the range [i, j]
     """
     # <your code>
-    return 1
+
+    # if i greater than j, switch
+    if i > j:
+        i, j = j, i
+
+    max_length = 1
+
+    for a in range(i, j+1):
+        cycle_length = 1
+
+        while (a > 1):
+            if (a % 2 == 1):
+                a = a + (a//2) + 1
+                cycle_length += 2
+
+            else:
+                a = a // 2
+                cycle_length += 1
+
+        if cycle_length > max_length:
+            max_length = cycle_length
+
+
+
+    return max_length
+
+
+
+    
 
 # -------------
 # collatz_print

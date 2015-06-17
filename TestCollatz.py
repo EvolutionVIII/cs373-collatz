@@ -54,17 +54,17 @@ class TestCollatz (TestCase) :
     # single value test
     # ----
 
-    def test_val_1 (self) :
-        v = collatz_singleval (1)
-        self.assertEqual(v, 1)
+    # def test_val_1 (self) :
+    #     v = collatz_singleval (1)
+    #     self.assertEqual(v, 1)
 
-    def test_val_2 (self) :
-        v = collatz_singleval (26)
-        self.assertEqual(v, 1)
+    # def test_val_2 (self) :
+    #     v = collatz_singleval (26)
+    #     self.assertEqual(v, 1)
 
-    def test_val_3 (self) :
-        v = collatz_singleval (999999)
-        self.assertEqual(v, 259)
+    # def test_val_3 (self) :
+    #     v = collatz_singleval (999999)
+    #     self.assertEqual(v, 259)
 
     # ----
     # eval
