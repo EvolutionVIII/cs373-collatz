@@ -48,19 +48,34 @@ def collatz_eval (i, j) :
     if i > j:
         i, j = j, i
 
+    # m = (e/2)+1, if b<m, then max_length(b,e) = max_length(m,e)
+    # example from class
+    if (i < (j//2 + 1)):
+        i = (j//2 + 1)
+
+
+
     max_length = 1
+
+    cache = {}
 
     for a in range(i, j+1):
         cycle_length = 1
 
         while (a > 1):
-            if (a % 2 == 1):
-                a = a + (a//2) + 1
-                cycle_length += 2
-
+            if (a in cache):
+                cycle_length += cache[a] - 1
+                break
             else:
-                a = a // 2
-                cycle_length += 1
+                if (a % 2 == 1):
+                    a = a + (a//2) + 1
+                    cycle_length += 2
+
+                else:
+                    a = a // 2
+                    cycle_length += 1
+
+        cache [a] = cycle_length
 
         if cycle_length > max_length:
             max_length = cycle_length
@@ -69,9 +84,6 @@ def collatz_eval (i, j) :
 
     return max_length
 
-
-
-    
 
 # -------------
 # collatz_print
