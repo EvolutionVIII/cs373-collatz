@@ -57,15 +57,20 @@ def collatz_eval (i, j) :
 
     max_length = 1
 
+    # adds cache optimization, when program computes cycle length for a number (a)
+    # it is stored in cache 
     cache = {}
 
     for a in range(i, j+1):
         cycle_length = 1
 
         while (a > 1):
-            if (a in cache):
+            # checks the cache to see if a is already calculated
+            # if found, add it to the current cycle length and subtract 1 (b/c of initial cycle_length)
+            if (a in cache):                
                 cycle_length += cache[a] - 1
                 break
+
             else:
                 if (a % 2 == 1):
                     a = a + (a//2) + 1
